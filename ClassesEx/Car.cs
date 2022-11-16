@@ -1,35 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System;
+using Microsoft.VisualBasic;
 
-namespace ClassesEx
+namespace CarLotSimulator
 {
     public class Car
 
     {
+        public static IEnumerable<object> Cars { get; internal set; }
 
-
-
-
-
-        public Car(string makeInput, string modelInput, int yearInput)
+        public Car()
         {
-            Make = make;
-            Model = model;
-            Year = year;
+            CarLot.numberOfCars++;
+            //ClassName.StaticMember
         }
 
-        public string Make { get; set; }
-        public string Model { get; set; }
-        public int Year { get; set; }
 
 
-        var chevy = new Car { "Chevy", "Impala", 2001 };
 
-        var carList = new List<Car>() { myCar, mazda, chevy, new Car(), new Car() };
-        private string make;
-        private string model;
-        private int year;
+        public Car(int year, string make, string model, string engineNoise, string honkNoise, bool isDrivable);
+        {
+            Year = year;
+            Make = make;
+            Model = model;
+            EngineNoise = engineNoise;
+            HonkNoise = honkNoise;
+            IsDrivable = isDrivable; 
 
-        Console.WriteLine(List.Capacity);
-    }
+        }
+
+
+    public int Year { get; set; }
+    public string Make { get; set; }
+    public string Model { get; set; }
+    public string EngineNoise { get; set; }
+    public string HonkNoise { get; set; }
+    public bool IsDrivable { get; set; }
+
+
+
+}    
 }
